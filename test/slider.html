@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻灯片</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/dropdown-common.css">
+    <style>
+        .slider {
+            width: 728px;
+            height: 504px;
+            position: relative;
+            overflow: hidden;
+            margin-left: 1000px;
+        }
+
+        .slider-indicator-wrap {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            margin-left: -36px;
+        }
+
+        .slider-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: #313a43;
+            border-radius: 50%;
+            margin-left: 12px;
+            cursor: pointer;
+        }
+
+        .slider-indicator-active {
+            background-color: #f7f8f9;
+            border: 2px solid #858b92;
+            position: relative;
+            top: -2px;
+        }
+
+        .slider-control {
+            display: none;
+            position: absolute;
+            top: 50%;
+            margin-top: -31px;
+            width: 28px;
+            height: 62px;
+            line-height: 62px;
+            background-color: #000;
+            opacity: 0.5;
+            color: #fff;
+            font-size: 22px;
+            font-family: simsun;
+            text-align: center;
+        }
+
+        .slider-control-left {
+            left: 0;
+        }
+
+        .slider-control-right {
+            right: 0;
+        }
+
+        .slider-fade .slider-item {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .slider-slide .slider-item {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-item a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-img {
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="focus-slider" class="slider">
+        <div class="slider-container">
+
+            <div class="slider-item">
+                <a href="###" target="_blank"><img src="../img/focus-slider/loading.gif" alt=""
+                        data-src='http://up.deskcity.org/pic_source/c2/1d/b3/c21db35b3e13089438ea8bd7e2c487c1.jpg'
+                        class="slider-img"></a>
+            </div>
+            <div class="slider-item">
+                <a href="###" target="_blank"><img src="../img/focus-slider/loading.gif" alt=""
+                        data-src='http://up.deskcity.org/pic_source/62/8c/ed/628ceda7cd7ba6b013ccd86a07f6fe75.jpg'
+                        class="slider-img"></a>
+            </div>
+            <div class="slider-item">
+                <a href="###" target="_blank"><img src="../img/focus-slider/loading.gif" alt=""
+                        data-src='../img/focus-slider/3.png' class="slider-img"></a>
+            </div>
+            <div class="slider-item">
+                <a href="###" target="_blank"><img src="../img/focus-slider/loading.gif" alt=""
+                        data-src='../img/focus-slider/4.png' class="slider-img"></a>
+            </div>
+
+        </div>
+        <ol class="slider-indicator-wrap">
+            <li class="slider-indicator fl text-hidden">1</li>
+            <li class="slider-indicator fl text-hidden">2</li>
+            <li class="slider-indicator fl text-hidden">3</li>
+            <li class="slider-indicator fl text-hidden">4</li>
+        </ol>
+        <a href="javascript:;" class="slider-control slider-control-left">&lt;</a>
+        <a href="javascript:;" class="slider-control slider-control-right">&gt;</a>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/move.js"></script>
+    <script src="../js/slider.js"></script>
+
+    <script>
+        var $focusSlider = $('#focus-slider');
+        $focusSlider.loadedImage = {};
+        $focusSlider.loadedImageLength = 0;
+        $focusSlider.loadItem;
+
+
+        $focusSlider.on('slider-show',$focusSlider.loadItem=function(e,index,$elem){
+            $focusSlider.trigger('$focusSlider-loadItem',[index,$elem])
+        })
+        $focusSlider.on('$focusSlider-loadItem',function(e,index,$elem){
+            var $img=$elem.find('.slider-img');
+            var url=$img.data('src');
+            if($focusSlider.loadedImage[index]!=='loaded'){
+                loadImg(url,function(){
+                    $img.attr('src',url);
+                    console.log(index+'loaded');
+                    // 防止重复加载
+                    $focusSlider.loadedImage[index]='loaded';
+                    // 已加载计数+1
+                    $focusSlider.loadedImageLength++;
+                    // 全部加载 以后清除加载事件
+                    if($focusSlider.loadedImageLength===$focusSlider.find('.slider-img').length){
+                        $focusSlider.trigger('$foucsSlider-itemsFullyLoaded')
+                    }
+                },function(){
+                    console.log('从'+url+'加载图片失败');
+                    $img.attr('src','../img/focus-slider/placeholder.png')
+                })
+            }
+        })
+        .on('$focusSlider-itemsFullyLoaded',function(e){
+            $focusSlider.off('slider-show',$focusSlider.loadItem)
+        })
+        // $focusSlider.on('slider-show', $focusSlider.loadItem = function (e, index, $elem) {  
+        //     console.log("我被执行了")
+        //     var $img = $elem.find('.slider-img')
+        //     var url = $img.data('src')
+        //     // 防止重复加载
+        //     if ($focusSlider.loadedImage[index] !== 'loaded') {
+        //         loadImg(url, function () {
+        //             $img.attr('src', url)
+        //             console.log(index + 'loaded')
+        //             $focusSlider.loadedImage[index] = 'loaded';
+        //             $focusSlider.loadedImageLength++;
+
+        //             if ($focusSlider.loadedImageLength === $focusSlider.find('.slider-img').length) {
+        //                 $focusSlider.off('slider-show', $focusSlider.loadItem)
+        //             }
+        //         }, function () {
+        //             console.log("从" + url + '加载图片失败')
+        //             // 备用图片
+        //             $img.attr('src', '../img/focus-slider/placeholder.png')
+        //         })
+        //     }
+        // })
+
+        function loadImg(url, imgLoaded, imgFailed) {
+            var image = new Image();
+            image.onerror = function () {
+                // 图片加载失败后执行的回调函数
+                if (typeof imgFailed === 'function') imgFailed(url)
+            }
+            image.onload = function () {
+                // 图片加载完成后执行的回调函数
+                if (typeof imgLoaded === 'function') imgLoaded(url)
+            }
+            // 后台加载图片
+            image.src = url
+        }
+  
+        $focusSlider.slider({
+            css: true,
+            js: true,
+            toggle: 'slide',
+            animation: 'fadeSlideLeftRight',
+            activeIndex: 0,
+            interval: 0,
+        })
+    </script>
+</body>
+
+</html>

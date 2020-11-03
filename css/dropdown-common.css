@@ -1,0 +1,172 @@
+/* dropdown所有下拉菜单 通用样式 */
+.dropdown {
+    position: relative;
+}
+
+
+.dropdown-toggle {
+    height: 100%;
+    /* z-index: 2; */
+}
+
+.dropdown-arrow {
+    display: inline-block;
+}
+
+.dropdown-layer {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+}
+
+.dropdown-left {
+    left: 0;
+    right: auto;
+}
+
+.dropdown-right {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-loading{
+
+    background:url(../img/loading.gif) no-repeat left top;
+}
+/* menu下拉菜单 特有样式 */
+.menu.dropdown-toggle {
+    padding: 0 16px 0 12px;
+    border-left: 1px solid #f3f5f7;
+    border-right: 1px solid #f3f5f7;
+}
+
+.menu.dropdown-arrow {
+    margin-left: 8px;
+    vertical-align: middle;
+
+}
+
+.menu.dropdown-layer {
+    top: 15.8px;
+    background-color: #fff;
+    border-bottom: 1px solid #cdd0d4;
+    border-left: 1px solid #cdd0d4;
+    border-right: 1px solid #cdd0d4;
+}
+
+.menu-item {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: #4d555d;
+    white-space: nowrap;
+    padding: 0 12px;
+}
+
+.menu-item:hover {
+    background-color: #f3f5f7;
+}
+
+.menu-active .dropdown-layer {
+    border-top: none;
+}
+
+.menu-active .dropdown-toggle {
+    border-color: #cdd0d4;
+    background-color: #fff;
+}
+
+.menu-active .dropdown-arrow{
+    transform: rotate(180deg);
+}
+/* 通用下拉箭头样式 */
+
+
+
+.transition {
+    transition: all 1s ;
+}
+
+.fadeout {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.slideUpDown {
+    height: 0 !important;
+    padding: 0 !important;
+}
+
+.slideLeftRight {
+    width: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* search搜索框组件 */
+.header-search {
+    border: 1px solid #cfd2d5;
+}
+
+.search-inputbox {
+    box-sizing: border-box;
+    width: 605px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border: none;
+    background-color: #fff;
+}
+
+.search-btn {
+    width: 73px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #07111b;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.search-layer {
+    width: 400px;
+    top: 100%;
+    left: -1px;
+    width: 100%;
+    border: 1px solid #cfd2d5;
+}
+
+.search-layer-item {
+    height: 24px;
+    line-height: 24px;
+    display: block;
+    padding: 0 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.search-layer-item:hover {
+    background-color: #f3f5f7;
+}
+
+/* shopping-cart样式 */
+.header-cart .dropdown-layer{
+    width: 170%;
+    top: 100%;
+    left: -70%;
+    height: 100px;
+}
+
+.cart-notice{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+    background: url('../img/loading.gif') no-repeat 18px;
+}
+
+

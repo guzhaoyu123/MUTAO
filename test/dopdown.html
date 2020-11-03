@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dropdown.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="./dropdown-common.css">
+    <style>
+        @font-face {
+            font-family: "iconfont";
+            src: url('font/iconfont.eot?t=1583958549762');
+            /* IE9 */
+            src: url('font/iconfont.eot?t=1583958549762#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                /* url('font/data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANYAAsAAAAAB1gAAAMJAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqCBIFnATYCJAMQCwoABCAFhG0HVxtoBsiuMTaGVk+0UFGZgR0VXJs8AR9yAIt4+G+s330zs/vnuyZBtYlHEodomjyyFbNqXgKHDtETCf9z7isLxFELzAoh277k91M6af4yWkAJdEDjz9+ckHeSSKhmwQJXdhDVt8jSL7gyzMyBtf9KSfaJe6dNywKZz7Lcxlq01/mnLsBsTA1srEmBBFwg2DB2wQs8TqDDjGxu23d29yFfhT0uEKdPMIJ8C15FYYkqNBuWFnELUdNl9w+4Gf0+/lkdviSNzJ6652iLiup/LvtyX8tcc0BC4uUcYKvIWAopxPHG6EEegjE9dPT2tB5SVYmlOrb+vL+ZWDiw0HGTJv950WTnd4G1MJb5uczjk/i5ValJfR9KPiC3gNqcaztkH5sxRRnOxw2IUg5S6cn626vDwE4PX7fG1OvFK5k0+qTjyvWQev9u/vHBJHv68Ck4v1p49OzQ1ZgA1nG6/ubKkEpPDl61hv3hvnkzHNK+++8SEyiACjO+4t27QtDGH4cnQ8v1r4e6vObrsKH3XSbfk+uGv2/3/Ebbf2Orn1n3xZjc5PaQGJYw25mNh+5OhCU+xP5Ns0iHT8qX0ghE/pgOQ+SW++b/PswT/5dMhlRfu27F95sNR6ZiuOjniXXxXxYPLCqG1DaXosk8kekppgeNSejQgX+bZMDnJXTDL5AM1fAEXdvkZFbNvpKnWpqhodNaNFWb0GGJttWdBgkeorRjsW2A0Oclkh7vkPX5SC70T2gY8RtNfeGBDnsjYstO86F1NJ0BIkHF0/NYU7iTulbpHxf2AHPZichLI9YACEML4ILc/HKiDZwglphhzLBCKSmmgjtwKzgN7HaOdcGtoMhci5R6ZV4ebXpTrsIdyN82AiAkoMKmzcM0Cs6JBuUl/8r3ewDGxY4QHYS64AAgGLTusQK58geQ21TOQYRHecUwgykkSRRGCZwD1gocwO5EOUxvHmQFFFIuy4SwrlIeKkWHqnK31zj+cB10sF8pkSJHiYbekyeIU3IXEYLPFpcXBRb1hiXMZ4FzJ4idGEaEAAAAAA==') format('woff2'),
+                url('font/iconfont.woff?t=1583958549762') format('woff'), */
+                url('font/iconfont.ttf?t=1583958549762') format('truetype'),
+                /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+                url('font/iconfont.svg?t=1583958549762#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 14px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-jiantouarrow483:before {
+            content: "\e695";
+        }
+
+        .icon-jiantoushang:before {
+            content: "\e62d";
+        }
+
+        .icon-xialajiantou:before {
+            content: "\e642";
+        }
+
+        button {
+            height: 16.8px;
+        }
+
+        .dropdown-loading {
+            border: 4px solid #f3f3f3;
+            /* Light grey */
+            border-top: 4px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu dropdown fl" data-active="menu" data-load="http://localhost/Dropdown-test/dropdown.json">
+        <div class="menu dropdown-toggle">我的幕淘<i class="menu dropdown-arrow iconfont icon-xialajiantou transition"></i>
+        </div>
+        <div class="menu dropdown-layer">
+            <div class="dropdown-loading"></div>
+        </div>
+    </div>
+
+    <!-- <div class="menu dropdown fl" data-active="menu">
+        <div class="menu dropdown-toggle">我的幕淘<i class="menu dropdown-arrow iconfont icon-xialajiantou transition"></i>
+        </div>
+        <div class="menu dropdown-layer">
+            <div class="menu-item">我的足迹</div>
+            <div class="menu-item">已买到的宝贝</div>
+        </div> -->
+    <!-- </div> -->
+    <button class="btn-show">点我显示</button>
+    <button class="btn-hide">点我隐藏</button>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../test/showhide.js"></script>
+    <script>
+        var $dropdown = $(".dropdown");
+        $dropdown.on("dropdown-show", function (e) {
+            var $this = $(this);
+            var dropdownLoad=$this.data("load");
+            if(!dropdownLoad)return;
+            if (!$this.data("loaded")) {
+                $.getJSON($this.data('load'), function (data) {
+                    var $layer = $(".dropdown-layer"),
+                        html = '';
+                    console.log(1);
+                    for (var i = 0; i < data.length; i++) {
+                        html += "<div class='menu-item'>" + data[i].name + "</div>"
+                    };
+                    setTimeout(function () {
+                        $layer.html(html)
+                    }, 1000);
+                    $this.data("loaded", true)
+                })
+            }
+        });
+        $dropdown.dropdown({
+            trigger: "hover",
+            css: true,
+            js: true,
+            animation: "fadeSlideUpDown",
+            delay: 0
+        })
+        $(".btn-show").on("click", function () {
+            $dropdown.dropdown("show")
+        });
+        $(".btn-hide").on("click", function () {
+            $dropdown.dropdown("hide")
+        })
+    </script>
+
+</body>
+
+</html>

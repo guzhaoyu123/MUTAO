@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动模块</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/dropdown-common.css">
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+        }
+
+        #box2 {
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: 100%;
+            background-color: yellow;
+        }
+        .slider{
+            width: 200px;
+            height: 100px;
+            position: relative;
+            margin-left: 100px;
+            margin-top: 20px;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+        .btns {
+            width: 100px;
+        }
+        .button{
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div id="box" class="box"></div>
+        <div id="box2" class="box"></div>
+    </div>
+    <div class="button">
+        <button id="back-btn" class="btns">&lt;</button><button id="foward-btn" class="btns">&gt;</button>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/showhide.js"></script>
+    <script src="../js/move.js"></script>
+    <script>
+        var $box = $('#box');
+        var $box2 = $('#box2')
+        var $backBtn = $('#back-btn');
+        var $fowardBtn = $('#foward-btn');
+
+        $box.slide({
+            css: true,
+            js: true,
+        })
+
+        $box2.slide({
+            css: true,
+            js: true
+        })
+        $fowardBtn.on('click', function () {
+            $box.slide('x', 0);
+            $box2.slide('x',200 )
+        })
+        $backBtn.on('click', function () {
+            $box.slide('x', -200);
+            $box2.slide('x', 0)
+        })
+    </script>
+</body>
+
+</html>

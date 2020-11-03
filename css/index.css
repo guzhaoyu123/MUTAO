@@ -1,0 +1,396 @@
+.nav-site {
+    width: 100%;
+    background-color: #f3f5f7;
+}
+
+.nav-site .container {
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #cdd0d4;
+}
+
+.nav-site-login {
+    margin-left: 15px;
+    color: #f01414;
+}
+
+.nav-site-signup {
+    margin-left: 10px;
+}
+
+.nav-site-mobile {
+    margin-left: 10px;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.nav-site-category {
+    margin: 0 10px;
+}
+
+.nav-site-service {
+    margin-right: 15px;
+}
+
+.dropdown-toggle {
+    display: block;
+    height: 100%;
+    padding: 0 16px 0 12px;
+    border-left: 1px solid #f3f5f7;
+    border-right: 1px solid #f3f5f7;
+    z-index: 2;
+}
+
+.dropdown-arrow {
+
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.dropdown-layer {
+    display: none;
+    position: absolute;
+    top: 44px;
+    background-color: #fff;
+    border: 1px solid #cdd0d4;
+}
+
+.dropdown-left {
+    left: 0;
+    right: auto;
+}
+
+.dropdown-right {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-item {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: #4d555d;
+    white-space: nowrap;
+    padding: 0 12px;
+}
+
+.dropdown-item:hover {
+    background-color: #f3f5f7;
+}
+
+.dropdown-active .dropdown-layer {
+    border-top: none;
+}
+
+.dropdown-active .dropdown-toggle {
+    border-color: #cdd0d4;
+    background-color: #fff;
+}
+
+.header {
+    width: 100%;
+    height: 124px;
+    background-color: #f3f5f7;
+}
+
+.header-logo {
+    width: 136px;
+    height: 48px;
+    display: block;
+    background: url("../img/header-logo.png") 0 0 no-repeat;
+    margin-left: 15px;
+}
+
+.header .header-search {
+    margin-left: 145px;
+}
+
+.header-cart {
+    padding: 10px;
+    background-color: red;
+    height: 20px;
+    width: 110px;
+    line-height: 20px;
+}
+
+.header-logo,
+.header-search,
+.header-cart {
+    margin-top: 36px;
+}
+
+.header-cart .cart-shopping {
+    color: white;
+    text-indent: 15px;
+    background: url(../img/cart/shopping-cart-16.png) no-repeat left;
+    background-size: 11px 11px;
+    padding-right: 15px;
+    border-right: 1px solid white;
+}
+
+.header-cart .cart-layer {
+    color: white;
+    margin-left: 10px;
+}
+
+.header-cart .cart-icon {
+    display: inline-block;
+    margin-left: 12px;
+    color: white;
+}
+
+/* nav-main */
+.nav-main {
+    width: 100%;
+    height: 48px;
+    background-color: #07111b;
+    margin-bottom: 8px;
+    text-indent: 182px;
+}
+
+.nav-main .link {
+    color: #fff;
+    font-size: 14px;
+    line-height: 48px;
+    margin-left: 50px;
+}
+
+
+/* focus */
+.focus {
+    width: 100%;
+    height: 504px;
+    background-color: #fff;
+    margin-bottom: 8px;
+}
+
+.focus-sidebar {
+    width: 249px;
+}
+
+.focus-news {
+    padding: 7px 20px 12px;
+    background-color: white;
+    border-bottom: none;
+    border-left: 1px solid #d9dde1;
+    border-top: 1px solid #d9dde1;
+    border-right: 1px solid #d9dde1;
+}
+
+.focus-news-head {
+    height: 38px;
+    line-height: 38px;
+}
+
+.focus-news-title {
+    color: #f01414;
+    font-size: 16px;
+}
+
+.focus-news-body {
+    line-height: 28px;
+}
+
+.focus-service {
+    border-left: 1px solid #d9dde1;
+}
+
+.focus-service-item {
+    width: 61px;
+    height: 71px;
+    border-top: 1px solid #d9dde1;
+    border-right: 1px solid #d9dde1;
+    text-align: center;
+}
+
+
+.focus-service-icon,
+.focus-service-text {
+    display: inline-block;
+    width: 100% !important;
+}
+
+.focus-service-icon {
+    margin-top: 17px;
+    color: #f67272;
+    font-size: 22px;
+}
+
+.focus-service-text {
+    margin-top: 6px;
+    color: #4d555d;
+}
+
+
+.focus-ad {
+    width: 100%;
+    height: 90px;
+    background: url(../img/focus-ad.png) no-repeat
+}
+
+.focus .slider {
+    margin-left: 8px;
+}
+
+/* todays */
+.todays .slider {
+    width: 100%;
+    height: 158px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.todays .slider-item a {
+    width: 240px;
+    height: 158px;
+}
+
+
+/* floor */
+.floor {
+    height: 532px;
+    margin-bottom: 10px;
+}
+.floor .container{
+    position: relative;
+    z-index: 1;
+}
+.floor-head {
+    height: 68px;
+    border-bottom: 1px solid #f01414
+}
+
+.floor-title {
+    margin-top: 22px;
+}
+
+.floor-title-num {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    background-color: #07111b;
+    margin-right: 12px;
+    color: #fff;
+    text-align: center;
+}
+
+.floor-title-text {
+    position: relative;
+    top: 3px;
+    color: #07111b;
+    font-size: 20px;
+}
+
+.floor-body {
+    height: 464px;
+}
+
+.floor-item {
+    width: 200px;
+    height: 232px;
+    text-align: center;
+}
+
+.floor-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.floor-item-pic {
+    margin-top: 24px;
+}
+
+.floor-item-name {
+    margin-top: 24px;
+}
+
+.floor-item-name .link {
+    color: #07111b;
+}
+
+.floor-item-price {
+    margin-top: 11px;
+    color: #f01414;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.floor-head .tab-item-wrap {
+    height: 62px;
+    line-height: 62px;
+    margin-top: 7px;
+}
+
+
+.floor-head .tab-item {
+    display: inline-block;
+    margin-right: 16px;
+    color: #93999f;
+    font-size: 14px;
+}
+
+.floor-head .tab-item-active {
+    background: url('../img/floor/floor-arrow.png') no-repeat center bottom;
+    color: #f01414;
+}
+
+.floor-divider {
+    width: 1px;
+    height: 14px;
+    margin: 22px 16px 0 0;
+    background-color: #d9dde1;
+}
+
+.floor-body .tab-panel {
+    height: 100%;
+}
+
+
+/* elevator */
+.elevator.container{
+    display: none;
+    position: fixed;
+    top: 50%;
+    margin-top: -90px;
+    left: 50%;
+    margin-left: -640px;
+}
+.elevator-item{
+    display: block;
+    width: 24px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #4d555d;
+    border-top:1px solid #d9dde1;
+}
+.elevator-active span{
+    color: #f01414;
+}
+.elevator-floor{
+
+}
+.elevator-text{
+    display: none;
+}
+
+.elevator-active .elevator-floor{
+    display: none;
+}
+.elevator-active .elevator-text{
+    display: block;
+}
